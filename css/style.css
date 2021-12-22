@@ -1,0 +1,23 @@
+body{
+  background-color: #e3e3e5;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+#fixedbtn {
+	position: fixed;
+	right: 3%;
+	bottom: 0px;
+	z-index: 1000
+}
+.half_highlight{
+  background: linear-gradient(to top, #ffffbb 35%, transparent 35%);
+}
+.icon {
+	transition: all 0.1s linear;
+}
+
+.icon:hover {
+	transform: scale(1.05);
+}
+.btn-info{
+  color: white;
+}
