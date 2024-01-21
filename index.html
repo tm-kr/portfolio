@@ -11,132 +11,506 @@
     <link rel="stylesheet" href="css/style.css">
     <title>포트폴리오</title>
   </head>
+  <script>
+    window.onload = function() {
+      // URL의 앵커를 가져옵니다.
+      var hash = window.location.hash;
+      // 앵커가 존재하는 경우 해당 앵커로 자동으로 이동합니다.
+      if (hash) {
+        var element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' }); // 스크롤 부드럽게 이동
+        }
+      }
+    };
+  </script>
   <body>
-<!-- 탑 버튼 -->
+    <!-- 탑 버튼 -->
     <button id="fixedbtn" type="button" onclick="window.scrollTo(0,0);" class="btn btn-dark mb-5">▲ TOP</button>
 
-    <div class="container-sm mt-5">
-      <div class="row">
-        <div class="col-lg-3 mb-5 " >
-          <div class=" shadow rounded" style="background-color:white">
-            <div class="p-3" style="text-align:center;">
-              <div class="border-bottom">
-                <img class="mt-5 rounded-circle border mb-3"src="img/profile.jpg" alt="" style="width:100px; height: 100px;object-fit: cover;">
-                <h5><b>TaeMin</b></h5><br>
-                <p class="mb-5">배우는 것과 만드는것을 즐기며<br>
-                    제가 만든 것에 애정이 깊습니다.</p>
-              </div>
+    <!-- 사이드바 -->
+    <div id="fix-category">
+      <b>
+        <a href="#about" class="category-hover">◾ About Me<br/></a>
+        <a href="#skill" class="category-hover">◾ Skill Sets<br/></a>
+        <a href="#projects" class="category-hover">◾ Projects<br/></a>
+        <a href="#junior" class="category-hover sub-category">- 주니어 개발자<br/></a>
+        <a href="#job-seeker" class="category-hover sub-category">- 개발자 이전 프로젝트<br/></a>
+        <a href="#certificate" class="category-hover">◾ Certificate<br/></a>
+        <a href="#timeline" class="category-hover">◾ Time Line<br/></a>
+      </b>
+    </div>
 
-            </div>
+    <div class="container-sm mt-5" style="max-width: 1000px">&nbsp;
+      <!-- 제목 -->
+      <div class="mt-3">
+        <h1 style="text-align: center; font-size: 3.8rem; "><b>{ Dev Travel }</b></h1>
+      </div>
 
-            <div class="skill p-3" style="text-align:center;">
-              <div class="border-bottom">
-                <h5 class=""><b>Backend</b></h5>
-                <h6 class="mb-3">JAVA / Spring Framework</h6>
-                <h5><b>DevOps</b></h5>
-                <h6 class="mb-3">Oracle Database</h6>
-                <h5><b>Frontend</b></h5>
-                <h6 class="mb-3">HTML5 / CSS / JS</h6>
-                <h5><b>About Tools</b></h5>
-                <h6 class="mb-5">Git / SourceTree</h6>
-              </div>
-            </div>
-            <div class="p-3" style="text-align:left">
-              <div class=" mt-3 mb-3">
-                <span class="half_highlight">&nbsp;Email&nbsp;</span> : greatperson21@naver.com<br>
-                <span class="half_highlight">&nbsp;Github&nbsp;</span> : <a href="https://github.com/tm-kr" target="_blank">https://github.com/tm-kr</a><br>
-                <span class="half_highlight">&nbsp;Blog&nbsp;</span> : <a href="https://blog.naver.com/greatperson21" target="_blank">https://blog.naver.com/gp21</a><br>
-              </div>
-            </div>
-          </div>
+      <!-- About Me 영역 -->
+      <div class="mt-5" id="about">&nbsp;
+        <h2 class="mt-3"><b>About Me</b></h2>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm-4" style="display:flex; justify-content: center">
+          <img class="shadow icon profile-img" src="img/profile2.png" alt="프로필이미지">
         </div>
-        <div class="col-lg-9">
-          <div class="row">
-            <!-- 여행 sns 사이트 -->
-            <div class="col-lg-4 icon">
-              <div class="card shadow mb-5" style=" margin:auto;">
-                <img src="img/tp1-0.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">여행 SNS 프로젝트</h5>
-                  <p class="card-text"><span style="color:#498fee;">Skill: </span>Spring MVC, Oracle DB, MyBatis, jsp, css, js
-                  <br><a href="http://cmh93.synology.me:49158/main" target="_blank">http://TripDiary.com</a></p>
-                  <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal1">
-                    Read more
-                  </button>
-                </div>
-              </div>
+        <div class="col-sm-8">
+          <h3 class="mt-4 mb-4">
+            <span class="half-highlight-yellow">
+              <b>김태민</b>
+            </span>
+          </h3>
+          <div class="p5"><span class="half-highlight-yellow">Email</span> : greatperson21@naver.com</div>
+          <div class="p5"><span class="half-highlight-yellow">Github</span> : <a href="https://github.com/tm-kr" target="_blank">https://github.com/tm-kr</a></div>
+          <div class="p5"><span class="half-highlight-yellow">Blog</span> : <a href="https://taeme.tistory.com" target="_blank">https://taeme.tistory.com</a></div>
+        </div>
+      </div>
+      <div class="mt-5 contents">
+        <h5>
+          <b>
+            안녕하세요!
+            <br/>코드 리팩토링을 즐기는 <span class="half-highlight-yellow">백엔드 개발자</span>, 김태민입니다.
+            <br/><br/>
+            저는,
+            <div class="p5">
+              - <span class="half-highlight-purple">성장을 원하는,</span><br/>
+              <span class="contents-text ps-3">✔️ 동료들과 함께 지식을 나누며 성장하는 것이 즐겁습니다.</span>
             </div>
-            <!-- 롤 챔피언 추천 테스트 -->
-            <div class="col-lg-4 icon">
-              <div class="card shadow mb-5" style="margin:auto;">
-                <img src="img/loltest.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">롤 챔피언 추천 테스트</h5>
-                  <p class="card-text"><span style="color:#498fee;">Skill: </span>html, css, js
-                  <br><a href="https://moment.netlify.app/" target="_blank">https://moment.netlify.app/</a></p>
-                  <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal2">
-                    Read more
-                  </button>
-                </div>
-              </div>
+            <div class="p5">
+              - <span class="half-highlight-grin">배움에 두려움이 없는,</span><br/>
+              <span class="contents-text ps-3">✔️ 문제를 해결함에 있어 새로운 도전을 두려워하지 않습니다.</span>
             </div>
-            <!-- 강아지 mbti 테스트 -->
-            <div class="col-lg-4 icon">
-              <div class="card shadow mb-5" style="margin:auto;">
-                <img src="img/mbti.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">강아지 MBTI 테스트</h5>
-                  <p class="card-text"><span style="color:#498fee;">Skill: </span>java, jsp, css</p>
-                  <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal3">
-                    Read more
-                  </button>
-                </div>
-              </div>
+            <div class="p5">
+              - <span class="half-highlight-blue">직접 만든 코드에 남다른 애정이 있는</span> 사람입니다.<br>
+              <span class="contents-text ps-3">✔️ 오래전에 작성한 코드도 다시 들여다 봅니다.</span>
             </div>
-            <!-- 게시판 프로젝트 -->
-            <div class="col-lg-4 icon">
-              <div class="card shadow mb-5" style="margin:auto;">
-                <img src="img/pp3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">페이징처리 및 검색, 정렬 게시판</h5>
-                  <p class="card-text"><span style="color:#498fee;">Skill: </span>Spring MVC, OracleDB, jsp, css, js</p>
-                  <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal4">
-                    Read more
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- 게임 전적 통계 사이트 -->
-            <div class="col-lg-4 icon">
-              <div class="card shadow mb-5" style="margin:auto;">
-                <img src="img/pp4.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">게임 전적 통계 사이트</h5>
-                  <p class="card-text"><div style="color:red;">현재 진행중인 프로젝트...</div><span style="color:#498fee;">Skill: </span>Spring MVC, OracleDB, MyBatis, jsp, css, js</p>
-                  <button type="button" class="btn btn-secondary" >
-                    Read more
-                  </button>
-                </div>
-              </div>
-            </div>
+          </b>
+        </h5>
+      </div>
+      <!-- END About Me 영역 -->
 
+      <!-- Skill Sets 영역 -->
+      <div class="mt-5" id="skill">
+        <h2><b>Skill Sets</b></h2>
+        <div class="mt-3 contents">
+          <h5>
+            <div>
+              <b><span class="half-highlight-yellow">Back/Front End Skills</span></b><br/>
+              <div class="row mt-3">
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/springboot.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/spring.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/java.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/vue.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/nuxt.png" alt="스킬 아이콘"></div>
+              </div>
+            </div>
+            <div class="mt-3">
+              <b><span class="half-highlight-yellow">RDBMS Skills</span></b><br/>
+              <div class="row mt-3">
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/mysql.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/mariadb.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/oracle.png" alt="스킬 아이콘"></div>
+              </div>
+            </div>
+            <div class="mt-3">
+              <b><span class="half-highlight-yellow">ETC</span></b><br/>
+              <div class="row mt-3">
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/git.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/jenkins.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/figma.png" alt="스킬 아이콘"></div>
+                <div class="col-2"><img class="shadow icon skill-img" src="img/skill-img/bootstrap.png" alt="스킬 아이콘"></div>
+              </div>
+            </div>
+          </h5>
+        </div>
+      </div>
+      <!-- END Skill Sets 영역 -->
 
+      <!-- 프로젝트 영역 -->
+      <div class="mt-5" id="projects">
+        <h2><b>Projects</b></h2>
+        <div class="mt-4 contents">
+          <h3 id="junior"><b><span class="half-highlight-yellow">🌱 주니어 개발자</span></b></h3>
+
+          <!-- 자사 솔루션 업그레이드 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-left background-color-purple"></div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="img/project/junior/wbsoft/wbsoft.png" alt="프로젝트 썸네일">
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h4 class="mt-4 mb-4">
+                  <b>[회사] 당사 솔루션 업그레이드</b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - JSP -> Nuxt3로 업그레이드<br/>
+                    - 모든 기능 개선<br/>
+                    - 요금제도 도입<br/>
+                    - 테이블 마이그레이션
+                  </b>
+                </h5>
+                <h5 class="mt-5">
+                  <b>
+                    2023.09 - 2024.01
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mb-3"><b># SpringBoot # Vue # Nuxt3</b></div>
+<!--                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">-->
+<!--                  더보기-->
+<!--                </button>-->
+              </div>
+            </div>
           </div>
-          <div class="footer mb-5 shadow" >
-            <div class="p-3" style="background-color:white; font-size:13px;">
-              © 2022 Kim TaeMin All Rights Reserved.
+
+          <!-- ACT ESG -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-rigth background-color-green"></div>
+              <div class="col-sm-6">
+                <h4 class="mt-4 mb-4">
+                  <b>[회사] ACT ESG </b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                  - Nuxt3 최초 도입<br/>
+                  - 기존 솔루션 토대로 일부 기능 변경
+                  </b>
+                </h5>
+                <h5 class="mt-5">
+                  <b>
+                    2023.06 - 2023.09
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mb-3"><b># SpringBoot # Vue # Nuxt3</b></div>
+<!--                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">-->
+<!--                  더보기-->
+<!--                </button>-->
+              </div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="img/project/junior/wbsoft/actesg.png" alt="프로젝트 썸네일">
+              </div>
+            </div>
+          </div>
+
+          <!-- 현대모비스 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-left background-color-gray"></div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="" alt="프로젝트 썸네일">
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h4 class="mt-4 mb-4">
+                  <b>[회사] 현대모비스 모비스쿨, 오픈플랫폼 등 구축</b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - 지식축적 및 공유가 가능한 플랫폼 구축<br/>
+                    - Gamification 랭킹 구축<br/>
+                    - 신규입사자 교육을 위한 웰컴라운지 구축
+                  </b>
+                </h5>
+                <h5 class="mt-5">
+                  <b>
+                    2022.12 - 2023.06
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mb-3"><b># Spring # SpringBoot # Vue</b></div>
+<!--                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">-->
+<!--                  더보기-->
+<!--                </button>-->
+              </div>
+            </div>
+          </div>
+
+          <!-- 메트라이프 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-rigth background-color-green"></div>
+              <div class="col-sm-6">
+                <h4 class="mt-4 mb-4">
+                  <b>[회사] 메트라이프 통합교육플랫폼 구축</b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - Agent 통합교육플랫폼 TIP<br/>
+                    - (Training Integration Platform) 시스템 구축<br/>
+                    - 클래스&코스 멀티 Player 강의실 구축<br/>
+                    - 학습 로드맵 시스템 구축<br/>
+                    - Gamification 목표달성 배지, 포인트, 캐릭터 구축<br/>
+                    - 직무성과기반 콘텐츠 추천
+                  </b>
+                </h5>
+                <h5 class="mt-5">
+                  <b>
+                    2022.03 - 2022.12
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mb-3"><b># Spring # SpringBoot # Vue</b></div>
+<!--                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">-->
+<!--                  더보기-->
+<!--                </button>-->
+              </div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="" alt="프로젝트 썸네일">
+              </div>
+            </div>
+          </div>
+
+          <!-- 공군학습플랫폼 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-left background-color-blue"></div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="img/project/junior/wbsoft/airforce.png" alt="프로젝트 썸네일">
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h4 class="mt-4 mb-4">
+                  <b>[회사] 공군학습플랫폼 시스템 구축</b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - 전 공군인을 위한 혼합교육 시스템<br/>
+                    - 사용자 맞춤형 대시보드
+                  </b>
+                </h5>
+                <h5 class="mt-5">
+                  <b>
+                    2022.08 - 2022.12
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mb-3"><b># Spring # SpringBoot # Vue</b></div>
+<!--                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">-->
+<!--                  더보기-->
+<!--                </button>-->
+              </div>
+            </div>
+          </div>
+
+          <!-- 국립외교원 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-rigth background-color-purple"></div>
+              <div class="col-sm-6">
+                <h4 class="mt-4 mb-4">
+                  <b>[회사] 외교부 국립외교원 외교배움e 구축</b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - MOFA 교육포털 '외교배움e' 시스템 구축<br/>
+                    - Live 실시간 화상교육 시스템 구축
+                  </b>
+                </h5>
+                <h5 class="mt-5">
+                  <b>
+                    2021.12 - 2022.04
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mb-3"><b># Spring Legacy # Oracle DB # MyBatis # JSP</b></div>
+<!--                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">-->
+<!--                  더보기-->
+<!--                </button>-->
+              </div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="img/project/junior/wbsoft/knda.png" alt="프로젝트 썸네일">
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mt-5" id="job-seeker"><b><span class="half-highlight-yellow">🐣 개발자 이전 프로젝트</span></b></h3>
+
+          <!-- 여행 SNS 프로젝트 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-left background-color-gray"></div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="img/project/job-seeker/trip-diary.jpg" alt="프로젝트 썸네일">
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h4 class="mt-4 mb-4">
+                  <b>[팀] 여행 SNS 프로젝트</b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - 카카오 맵 API, FullCalendar API 활용<br/>
+                    - 이미지 업로드 및 파일 유효성 검사<br/>
+                    - 특정 조건 충족시 엠블럼 획득 가능<br/>
+                    - 검색기능 및 정렬 페이징 처리<br/>
+                    - 다크모드 기능 구현
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mt-5 mb-3"><b># Spring MVC # Oracle DB # MyBatis # JSP</b></div>
+                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#seedDevTripDiaryModal">
+                  더보기
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 롤 챔피언 추천 테스트 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-rigth background-color-blue"></div>
+              <div class="col-sm-6">
+                <h4 class="mt-4 mb-4">
+                  <b>[개인] 롤 챔피언 추천 테스트 </b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - 선택한 버튼에 따라 다른 문자값을 지정하여 문자값을 합쳐 결과 도출<br/>
+                    - 구글 애널리틱스 적용<br/>
+                    - Naver SEO 검증 양호<br/>
+                    - 하루 최고 트래픽 13,000 달성
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mt-5 mb-3"><b># JavaScript # Static Web Page</b></div>
+                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#seedDevLeageOfLegendRecommend">
+                  더보기
+                </button>
+              </div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="img/project/job-seeker/loltest.jpg" alt="프로젝트 썸네일">
+              </div>
+            </div>
+          </div>
+
+          <!-- 강아지 MBTI 테스트 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-left background-color-brown"></div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="img/project/job-seeker/mbti.jpg" alt="프로젝트 썸네일">
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h4 class="mt-4 mb-4">
+                  <b>[개인] 강아지 MBTI 테스트</b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - 선택한 버튼에 따라 점수를 부과하여 점수 계산 후 결과 도출
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mt-5 mb-3"><b># Spring MVC # OracleDB # JSP</b></div>
+                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#seedDevDogMbti">
+                  더보기
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 게시판 만들기 -->
+          <div class="projcet-contents">
+            <div class="row mt-5">
+              <div class="project-background-rigth background-color-purple"></div>
+              <div class="col-sm-6">
+                <h4 class="mt-4 mb-4">
+                  <b>[개인] 게시판 만들기</b>
+                </h4>
+                <h5 class="projcet-contents-text mt-5">
+                  <b>
+                    - 게시글 CRUD, 로그인, 회원가입 DB 연동<br/>
+                    - 페이징 처리 및 검색기능 구현
+                  </b>
+                </h5>
+                <div class="projcet-contents-text mt-5 mb-3"><b># Spring MVC # OracleDB # JSP</b></div>
+                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#seedDevBoard">
+                  더보기
+                </button>
+              </div>
+              <div class="col-sm-6" style="display:flex; justify-content: center">
+                <img class="shadow project-thumbnail" src="img/project/job-seeker/board.jpg" alt="프로젝트 썸네일">
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- END 프로젝트 영역 -->
+
+      <!-- 자격증 영역 -->
+      <div class="mt-5" id="certificate">
+        &nbsp;<h2><b>Certificate</b></h2>
+        <div class="mt-3 contents">
+          <h5>
+            <b>
+              <div class="contents-text p5">◾ 정보처리기능사 (2021.05.07)</div>
+              <div class="contents-text p5">◾ SQLD (2022.04.08)</div>
+              <div class="contents-text p5">◾ 리눅스 마스터 2급 (2023.06.30)</div>
+              <div class="contents-text p5">◾ SW개발 L5 일학습병행 (2023.12.28)</div>
+            </b>
+          </h5>
+        </div>
+      </div>
+      <!-- END 자격증 영역 -->
+
+      <!-- 타임라인 영역 -->
+      <div class="mt-5" id="timeline">
+        &nbsp;<h2><b>Time Line</b></h2>
+        <div class="mt-3 contents">
+
+          <ul class="timeline">
+            <!-- 윌비소프트 -->
+            <li>
+              <div class="direction-r">
+                <div class="flag-wrapper">
+                  <span class="flag">윌비소프트 입사</span>
+                  <span class="time-wrapper"><span class="time">2021.12 - present</span></span>
+                </div>
+                <div class="desc">첫 직장</div>
+              </div>
+            </li>
+            <!-- 국비교육 -->
+            <li>
+              <div class="direction-l">
+                <div class="flag-wrapper">
+                  <span class="flag">국비교육 이수</span>
+                  <span class="time-wrapper"><span class="time">2021.05 - 2021.11</span></span>
+                </div>
+                <div class="desc">KG IT뱅크 6개월 자바 교육 이수</div>
+              </div>
+            </li>
+            <!-- 학점은행제 -->
+            <li>
+              <div class="direction-r">
+                <div class="flag-wrapper">
+                  <span class="flag">학점은행제 중퇴</span>
+                  <span class="time-wrapper"><span class="time">2018.03 - 2018.06</span></span>
+                </div>
+                <div class="desc">광운대학교 정보과학교육원 컴퓨터공학과 중퇴</div>
+              </div>
+            </li>
+            <!-- 해동고등학교 -->
+            <li>
+              <div class="direction-l">
+                <div class="flag-wrapper">
+                  <span class="flag">해동고등학교 졸업</span>
+                  <span class="time-wrapper"><span class="time">2018</span></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- END 타임라인 영역 -->
+
+      <div class="mt-5 p-3" style="font-size:13px; text-align: center;  vertical-align : bottom;">
+        © 2022 Kim TaeMin All Rights Reserved.
+      </div>
     </div>
 
-    <!-- Modal1 -->
-    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- 여행 SNS 프로젝트 Modal -->
+    <div class="modal fade" id="seedDevTripDiaryModal" tabindex="-1" aria-labelledby="seedDevTripDiaryModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">여행 SNS 프로젝트</h5>
+            <h5 class="modal-title" id="seedDevTripDiaryModalLabel">여행 SNS 프로젝트</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -145,7 +519,6 @@
               </video>
             </div>
             <div class="mb-3 p-3 shadow">
-              &#149; URL : <a href="http://cmh93.synology.me:49158/main" target="_blank">http://TripDiary.com</a><br>
               &#149; 프로젝트 코드 소스 : <a href="https://github.com/tm-kr/TripDiary_workspace" target="_blank">https://github.com/tm-kr/TripDiary_workspace</a><br>
               &#149; 카카오 맵 API, FullCalendar API 활용<br>
               &#149; 이미지 업로드 및 파일 유효성 검사<br>
@@ -160,12 +533,13 @@
         </div>
       </div>
     </div>
-    <!-- Modal2 -->
-    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <!-- 롤 챔피언 추천 테스트 Modal -->
+    <div class="modal fade" id="seedDevLeageOfLegendRecommend" tabindex="-1" aria-labelledby="seedDevLeageOfLegendRecommendLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">롤 챔피언 추천 테스트</h5>
+            <h5 class="modal-title" id="seedDevLeageOfLegendRecommendLabel">롤 챔피언 추천 테스트</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -185,12 +559,13 @@
         </div>
       </div>
     </div>
-    <!-- Modal3 -->
-    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <!-- 강아지 MBTI 테스트 Modal -->
+    <div class="modal fade" id="seedDevDogMbti" tabindex="-1" aria-labelledby="seedDevDogMbtiLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">강아지 MBTI 테스트</h5>
+            <h5 class="modal-title" id="seedDevDogMbtiLabel">강아지 MBTI 테스트</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -210,12 +585,13 @@
         </div>
       </div>
     </div>
-    <!-- Modal4 -->
-    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <!-- 페이징처리 및 검색, 정렬 게시판 Modal -->
+    <div class="modal fade" id="seedDevBoard" tabindex="-1" aria-labelledby="seedDevBoardLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">페이징처리 및 검색, 정렬 게시판</h5>
+            <h5 class="modal-title" id="seedDevBoardLabel">페이징처리 및 검색, 정렬 게시판</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -236,26 +612,7 @@
         </div>
       </div>
     </div>
-    <!-- Modal5 -->
-    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button style="margin:auto;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     <script src="js/bootstrap.min.js"></script>
-
   </body>
 </html>
