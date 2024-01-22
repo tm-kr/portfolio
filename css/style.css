@@ -122,8 +122,16 @@ body{
 	background-color: #d2e4ff;
 }
 
+.background-color-sky {
+	background-color: #d3f9ff;
+}
+
 .background-color-purple {
 	background-color: #f9ccfb;
+}
+
+.background-color-violet {
+	background-color: #d8d0fc;
 }
 
 .background-color-brown {
