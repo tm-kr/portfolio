@@ -415,12 +415,10 @@ td {
 
 @media screen and (max-width: 1240px) {
 	.project-background-left {
-		background-color: white;
-		left: 0px;
+		display: none;
 	}
 
-	.project-background-rigth {
-		background-color: white;
-		right: 0px;
+	.project-background-right {
+		display: none;
 	}
 }
