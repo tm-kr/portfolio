@@ -109,6 +109,13 @@ td {
 	border-radius: 5%;
 }
 
+.project-modal-img {
+	width:520px;
+	height: 360px;
+	object-fit: cover;
+	border-radius: 5%;
+}
+
 .project-background-left {
 	border-radius: 0 190px 190px 0;
 	height: 300px;
